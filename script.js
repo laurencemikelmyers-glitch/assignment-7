@@ -25,3 +25,28 @@ for (let i = 0; i < popularFoods.length; i++) {
     console.log(popularFoods[i]);
   }
 }
+// 5. Function that takes a food and says if you like it
+function checkFood(food) {
+  if (myFoods.includes(food)) {
+    return `Yes! I like ${food}.`;
+  } else {
+    return `No, I don't really like ${food}.`;
+  }
+}
+// Test the function
+console.log("\nFood check:");
+console.log(checkFood("Pizza")); // Yes
+console.log(checkFood("Salad")); // No
+
+// 6. Count how many of your favorite foods are in popularFoods
+let count = 0;
+for (let i = 0; i < myFoods.length; i++) {
+  if (popularFoods.includes(myFoods[i])) {
+    count++;
+  }
+}
+console.log(`\nI have ${count} favorite foods that are also popular.`);
+
+// 7. Find the first popular food that is NOT in your favorites
+let firstNotFavorite = popularFoods.find(food => !myFoods.includes(food));
+console.log(`\nThe first popular food I don't like is: ${firstNotFavorite}`);
