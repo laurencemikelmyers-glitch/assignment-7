@@ -37,7 +37,6 @@ function checkFood(food) {
 console.log("\nFood check:");
 console.log(checkFood("Pizza")); // Yes
 console.log(checkFood("Salad")); // No
-
 // 6. Count how many of your favorite foods are in popularFoods
 let count = 0;
 for (let i = 0; i < myFoods.length; i++) {
@@ -50,3 +49,18 @@ console.log(`\nI have ${count} favorite foods that are also popular.`);
 // 7. Find the first popular food that is NOT in your favorites
 let firstNotFavorite = popularFoods.find(food => !myFoods.includes(food));
 console.log(`\nThe first popular food I don't like is: ${firstNotFavorite}`);
+// 8. Add a new favorite food to myFoods array
+myFoods.push("Chocolate");
+console.log("\nUpdated favorite foods:", myFoods);
+
+// 9. Remove a food you no longer like from myFoods array
+let removedFood = myFoods.splice(myFoods.indexOf("Burgers"), 1);
+console.log(`\nRemoved food: ${removedFood}`);
+console.log("Updated favorite foods:", myFoods);
+
+// 10. Compare lengths of arrays and log a message
+if (myFoods.length > popularFoods.length) {
+  console.log("\nI have more favorite foods than popular foods!");
+} else {
+  console.log("\nThere are more popular foods than my favorites.");
+}
